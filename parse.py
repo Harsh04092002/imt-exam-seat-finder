@@ -14,14 +14,14 @@ print(f"Total rows in sheet: {len(rows)}")
 # Step 3: Find every row that looks like a "header" row
 # We use regex to pull out Subject, Date, Time, Hall from that one messy string
 header_pattern = re.compile(
-    r"Subject\(s\):\s*(.+?)\s{2,}Date:\s*(.+?)\s{2,}Time:\s*(.+?)\s{2,}Exam Hall:\s*(\S+)"
+    r"Sub(?:ject)?\(s\):\s*(.+?)\s{2,}Date:\s*(.+?)\s{2,}Time:\s*(.+?)\s{2,}Exam Hall:\s*(\S+)"
 )
 
 print(f"Total rows in sheet: {len(rows)}")
 
 # Step 3: Find every "header" row and read the 5 seat rows below it
 header_pattern = re.compile(
-    r"Subject\(s\):\s*(.+?)\s{2,}Date:\s*(.+?)\s{2,}Time:\s*(.+?)\s{2,}Exam Hall:\s*(\S+)"
+    r"Sub(?:ject)?\(s\):\s*(.+?)\s{2,}Date:\s*(.+?)\s{2,}Time:\s*(.+?)\s{2,}Exam Hall:\s*(\S+)"
 )
 
 records = []  # this will hold one entry per student per exam
